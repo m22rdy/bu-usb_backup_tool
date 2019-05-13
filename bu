@@ -32,7 +32,7 @@ if [[ ! $(lsblk -S -o  TRAN | grep 'usb') = *usb* ]]; then
 
     echo $'\n'$"BU Error: No USB drive connected!" >&2
     echo "- Check to see that BU_Drive is plugged in." >&2
-    echo "- Pleese run 'bu --help' to learn about drive setup. :)" >&2
+    echo "- Please run 'bu --help' to learn about drive setup. :)" >&2
     exit 1
 
 fi
@@ -53,7 +53,7 @@ fi
 
 backup() {
 
-# Check for sudo privilages:
+# Check for sudo privileges:
 
 echo "Checking for sudo privileges..."
 sudo ls >/dev/null
@@ -75,7 +75,7 @@ if [ "$?" == "0" ]; then
 
 else
 
-    echo $'\n'$"BU Error: Could not create directroy for $host!" >&2
+    echo $'\n'$"BU Error: Could not create directory for $host!" >&2
     echo "- Backup aborted. Check the status of the BU_Drive." >&2
     exit -1
 fi
@@ -117,7 +117,7 @@ restore() {
 
 # Runs an rsync operation to restore host's /home directory.
 
-# CHeck for the host's backup directory:
+# Check for the host's backup directory:
 
 if [ ! -d /media/$user/BU_Drive/BU_Backups/$host/ ]; then
 
@@ -172,7 +172,7 @@ read -n 1 -s choice
                 echo $'\n'$"BU Error: rsync exited with errors!" >&2
                 echo "DO NOT DO ANYTHING UNTIL YOU:" >&2
                 echo $'\n'$"    Make sure BU_Drive USB is still plugged in." >&2
-                echo "    Remount BUDrive USB by unplugging it and plugging it back in." >&2
+                echo "    Remount BU_Drive USB by unplugging it and plugging it back in." >&2
                 echo $'\n'$"Wait a few seconds and try running 'bu --restore' again." >&2
                 echo "You may need to manually restore your data if errors persist." >&2
                 exit 1
