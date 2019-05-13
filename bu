@@ -105,7 +105,7 @@ else
 
     # Clear any accidental input during backup:
     read -t 1 -n 10000 discard
-    echo "There were errors! Try running the caoomnd again to correct them." >&2
+    echo "There were errors! Try running the command again to correct them." >&2
     echo "- If errors persist then you may have corrupt files or failing hardware." >&2
     exit 1
 
