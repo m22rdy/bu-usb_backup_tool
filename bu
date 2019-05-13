@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# BU - USB Backup Tool (Version 1.0) -- by Joe Collins. (www.ezeelinux.com)
+# BU -- USB Backup Tool (Version 1.0) -- by Joe Collins. (www.ezeelinux.com)
 # A simple tool to create reliable backups of /etc/ and /home from multiple
 # Debian/Ubuntu Linux systems. (May 10, 2019)
 # (GNU/General Public License version 2.0)
@@ -153,12 +153,12 @@ read -n 1 -s choice
 
                 # Clear any accidental input during restore:
                 read -t 1 -n 10000 discard
-                echo "Wait! Syncing drives..."
-                sync
-                echo "...Done."
                 echo "-------------------------"
                 echo "- Restoration Complete! -"
                 echo "-------------------------"
+                echo "Wait! Syncing drives..."
+                sync
+                echo "...Done."
                 echo "It's now safe to remove BU_Drive."
                 echo "Restart machine for all changes to take effect."
                 exit
@@ -170,9 +170,9 @@ read -n 1 -s choice
                 # Clear any accidental input during restore:
                 read -t 1 -n 10000 discard
                 echo $'\n'$"BU Error: rsync exited with errors!" >&2
-                echo "DO NOT EXIT XBT UNTIL YOU:" >&2
+                echo "DO NOT DO ANYTHING UNTIL YOU:" >&2
                 echo $'\n'$"    Make sure BU_Drive USB is still plugged in." >&2
-                echo "    Remount XBT Drive USB by unplugging it and plugging it back in." >&2
+                echo "    Remount BUDrive USB by unplugging it and plugging it back in." >&2
                 echo $'\n'$"Wait a few seconds and try running 'bu --restore' again." >&2
                 echo "You may need to manually restore your data if errors persist." >&2
                 exit 1
@@ -277,7 +277,7 @@ fi
 
 # Tell 'em who we are...
 
-echo "BU - USB Backup Tool (Version 1.0)"
+echo "BU -- USB Backup Tool (Version 1.0)"
 drive_test
 backup
 
