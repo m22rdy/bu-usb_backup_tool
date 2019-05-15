@@ -124,7 +124,7 @@ if [ ! -d /media/$user/BU_Drive/BU_Backups/$host/ ]; then
     echo "BU Error: Cannot find valid backup directory for $host!" >&2
     echo "- This drive may not have been used to backup this machine." >&2
     echo "- BU_Backups/$host directory may have been moved or deleted." >&2
-    echo "- Hostneme or username may have changed since last backup." >&2
+    echo "- Hostname or username may have changed since last backup." >&2
     exit 1
 
 fi
